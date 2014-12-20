@@ -1,0 +1,14 @@
+{
+    "dependencies": {
+        "backbone": null,
+        "jquery": "1.9",
+        "requirejs": null,
+        "underscore": null,
+        "bootstrap":null,
+        "marionette":null,
+        "handlebars":null,
+				"text":null
+    },
+    "name": "RequireJS Starter",
+    "version": "1.0.0"
+}
