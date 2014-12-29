@@ -21,7 +21,16 @@ define(["backbone","marionette","handlebars","text!home/login/template.hb","back
         },
         login: function(){
         	
-        	this.model.save();
+        	this.model.save({},{
+        		success:function(){
+        			console.log("success");
+        			var globalChannel = Backbone.Wreqr.radio.channel('global');
+        			globalChannel.vent.trigger("show:home");
+        		},
+        		error:function(){
+        			console.log("erorr");
+        		}
+        	});
         },
         onBeforeDestroy: function () {
             this.unstickit();

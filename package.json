@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "express": "~4.9.x",
-	"pg":"4.x"
+	  "pg":"4.x",
+		"underscore":"",
+		"body-parser":""
   },
   "engines": {
     "node": "0.10.x"

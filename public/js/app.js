@@ -13,6 +13,6 @@ define(["backbone","marionette","home/controller"],
 		});
 		myApp.start();
 		var homeController = new HomeController();
-		homeController.showHome({region:myApp.mainRegion});
+		homeController.showLogin({region:myApp.mainRegion});
   }
 );
