@@ -7,7 +7,8 @@
         "bootstrap":null,
         "marionette":null,
         "handlebars":null,
-				"text":null
+		"text":null,
+		"backbone.stickit":null
     },
     "name": "RequireJS Starter",
     "version": "1.0.0"

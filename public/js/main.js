@@ -10,7 +10,8 @@ require.config({
         "marionette": "libs/marionette/lib/backbone.marionette.min",
         "bootstrap":"libs/bootstrap/dist/js/bootstrap.min",
         "handlebars":"libs/handlebars/handlebars.min",
-        "text":"libs/text/text"
+        "text":"libs/text/text",
+        "backbone.stickit":"libs/backbone.stickit/backbone.stickit"
     },
     shim: {
         "backbone": {

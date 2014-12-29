@@ -9,14 +9,19 @@ app.get('/', function(request, response) {
   response.send('Hello World!');
 });
 
-app.get('/db', function(request, response) {
+app.get('/login', function(request, response) {
+	var userName = request.param('userName');
+	var password = request.param('password');
 	pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-	    client.query('SELECT * FROM test_table', function(err, result) {
+	    client.query('SELECT * FROM user WHERE user_name=?, password=?', function(err, result) {
 	      done();
 	      if (err)
 	       { console.error(err); response.send("Error " + err); }
 	      else
-	       { response.send(result.rows); }
+	       { 
+	    	  if()
+	    	  response.send(result.rows); 
+	       }
 	    });
 	  });
 });

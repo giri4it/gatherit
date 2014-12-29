@@ -1,15 +1,31 @@
-define(["backbone","marionette","handlebars","text!home/template.hb"],
-		function(Backbone, Marionette, Handlebars, Template){
-    var App = Backbone.Marionette.ItemView.extend({
+define(["backbone","marionette","handlebars","text!home/login/template.hb","backbone.stickit","home/login/model"],
+		function(Backbone, Marionette, Handlebars, Template, Stickit, LoginModel){
+	
+    var LoginView = Backbone.Marionette.ItemView.extend({
     	id:'container',
     	tagName:'div',
+    	model: new LoginModel(),
         initialize: function(){
-            
+        	this.template = Handlebars.compile(Template);
         },
-        render:function(){
-        	var template = Handlebars.compile(Template);
-        	this.$el.html(template);
+        bindings: {
+        	'#loginName':'loginName',
+        	'#password':'password'
+        },
+        onRender: function(){
+        	this.stickit();
+        	return this;
+        },
+        events:{
+        	'click #btnLogin': 'login',
+        },
+        login: function(){
+        	
+        	this.model.save();
+        },
+        onBeforeDestroy: function () {
+            this.unstickit();
         }
     });
-    return App;
+    return LoginView;
 });

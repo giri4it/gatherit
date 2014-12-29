@@ -1,4 +1,4 @@
-# node-js-getting-started
+# gather it server side app for Mozanta using node-js
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
 
@@ -9,8 +9,8 @@ This application support the [Getting Started with Node on Heroku](https://devce
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
 ```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
+$ git clone https://github.com/giri4it/gatherit.git # or clone your own fork
+$ cd gatherit
 $ npm install
 $ npm start
 ```
