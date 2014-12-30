@@ -1,0 +1,5 @@
+.backbone-loading{
+	background: url(image/ajax-loader.gif);
+    background-size: 80px 60px;
+    background-repeat: no-repeat;
+}
