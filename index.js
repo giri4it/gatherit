@@ -6,7 +6,9 @@ var app = express();
 var LoginService = require('./express_app/login/service.js');
 var loginService = new LoginService();
 
-console.log(LoginService);
+var RegisterService = require('./express_app/register/service.js');
+var registerService = new RegisterService();
+
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json())
@@ -19,6 +21,13 @@ app.post('/login', function(request, response) {
 	
 	loginService.authenticate(request,response);
 	  
+});
+
+app.post('/register',function(request, response){
+	console.log("in register method");
+	//TODO: instead of passing req, res pass the model object after validation
+	registerService.register(request,response);
+	
 });
 
 app.listen(app.get('port'), function() {
