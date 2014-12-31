@@ -1,6 +1,6 @@
-define(["backbone","marionette","home/controller"],
+define(["backbone","marionette","login/controller"],
 		
-  function(Backbone, Marionette, HomeController){
+  function(Backbone, Marionette, LoginController){
 	var MyApp = Marionette.Application.extend({
 		  initialize: function(options) {
 		    //console.log(options.container);
@@ -12,7 +12,7 @@ define(["backbone","marionette","home/controller"],
 			mainRegion:"#container"
 		});
 		myApp.start();
-		var homeController = new HomeController();
-		homeController.showLogin({region:myApp.mainRegion});
+		var loginController = new LoginController();
+		loginController.showLogin({region:myApp.mainRegion});
   }
 );

@@ -9,6 +9,8 @@ var loginService = new LoginService();
 var RegisterService = require('./express_app/register/service.js');
 var registerService = new RegisterService();
 
+console.log("Hello Ashish");
+
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json())

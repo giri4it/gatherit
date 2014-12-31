@@ -1,4 +1,4 @@
-define(["backbone","marionette","handlebars","text!home/login/template.hb","backbone.stickit","home/login/model"],
+define(["backbone","marionette","handlebars","text!login/template.hb","backbone.stickit","login/model"],
 		function(Backbone, Marionette, Handlebars, Template, Stickit, LoginModel){
 	
     var LoginView = Backbone.Marionette.ItemView.extend({
