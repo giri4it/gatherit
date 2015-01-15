@@ -32,6 +32,14 @@ app.post('/register',function(request, response){
 	
 });
 
+var PushMessage = require('./express_app/pushMessage/service.js');
+var pushMessage = new PushMessage();
+app.post('/pushMessage', function(request, response) {
+	console.log("in pushMessage method");
+	// TODO: instead of passing req, res pass the model object after validation
+	pushMessage.push(request, response);
+
+});
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
