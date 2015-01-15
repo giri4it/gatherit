@@ -11,7 +11,9 @@
 	 "pg":"4.x",
 	 "underscore":"",
 	 "body-parser":"",
-	 "backbone-loading":""
+	 "backbone-loading":"",
+	 "formidable":"",
+	 "util":""
   },
   "engines": {
     "node": "0.10.x"

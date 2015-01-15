@@ -45,17 +45,17 @@
 						<li>
 					<form class="navbar-form navbar-left" method='post' action='upload' enctype="multipart/form-data">
 						<div class="form-group">
-							<input type="file" class="filestyle btn btn-primary" data-input="false" data-iconName="glyphicon-inbox">
+							<input id="file-select" type="file" name="image" class="filestyle btn btn-primary" data-input="false" data-iconName="glyphicon-inbox">
 						</div>
 						<label for="filestyle-0" class="btn btn-default ">
-						<button type="submit" class="glyphicon glyphicon-folder-open">  Submit  </button>
+						<button id="file-upload" type="submit" class="glyphicon glyphicon-folder-open">  Submit  </button>
 						</label>
 					</form>
 						</li>
 						<li>
 						<form class="navbar-form navbar-left">
 						<div class="navbar-header">
-						<button type="button" class="btn btn-default"> Push Advertisement </botton>
+						<button type="button" class="btn btn-default"> List Advertisements: </botton>
 						</div>
 						</form>
 						</li>
@@ -63,6 +63,11 @@
 				</div>
 				
 			</nav>
+				<div class="message"></div>
+                <div id="filelist"></div>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 0%;"></div>
+                </div>
 			<div class="jumbotron">
 				<h3>
 					Welcome to Nextgen Mobile advertisement Portal
@@ -78,6 +83,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="row clearfix">
 		<div class="col-md-4 column">
 			<h2>

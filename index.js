@@ -38,19 +38,21 @@ app.post('/register',function(request, response){
 app.post('/upload',function(request, response){
 
 	console.log("upload received");
+	uploadService.storeFile(request, response);
 	if (request.files) {
 		if (request.files.myFile.size === 0) {
 			return next(new Error("Hey, first would you select a file?"));
 		}
 
-		fs.exists(request.files.myFile.path, function(exists) {
-			if(exists) {
-				response.end("Got your file!");
-				uploadService.storeFile(request, response);
-			} else {
-				response.end("Well, there is no magic for those who don’t believe in it!");
-			}
-		});
+
+		//fs.exists(request.files.myFile.path, function(exists) {
+		//	if(exists) {
+		//		response.end("Got your file!");
+		//		uploadService.storeFile(request, response);
+		//	} else {
+		//		response.end("Well, there is no magic for those who don’t believe in it!");
+		//	}
+		//});
 
 	}
 });

@@ -8,7 +8,8 @@
         "marionette":null,
         "handlebars":null,
 		"text":null,
-		"backbone.stickit":null
+		"backbone.stickit":null,
+		"plupload":null
     },
     "name": "RequireJS Starter",
     "version": "1.0.0"

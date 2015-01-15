@@ -17,7 +17,7 @@ define(["backbone","marionette","handlebars","text!login/template.hb","backbone.
         	return this;
         },
         events:{
-        	'click #btnLogin': 'login',
+        	'click #btnLogin': 'login'
         },
         login: function(){
         	

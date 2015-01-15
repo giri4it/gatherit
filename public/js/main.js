@@ -10,7 +10,8 @@ require.config({
         "bootstrap":"libs/bootstrap/dist/js/bootstrap.min",
         "handlebars":"libs/handlebars/handlebars.min",
         "text":"libs/text/text",
-        "backbone.stickit":"libs/backbone.stickit/backbone.stickit"
+        "backbone.stickit":"libs/backbone.stickit/backbone.stickit",
+        "plupload" : "libs/plupload/js/plupload.full.min"
     },
     shim: {
     	"jquery":{
@@ -24,8 +25,12 @@ require.config({
         },
         "bootstrap":{
         	deps:["jquery"]
+        },
+        "plupload":{
+            deps:["jquery"],
+            exports: "plupload"
         }
-        
+
     },
         //how long the it tries to load a script before giving up, the default is 7
     waitSeconds: 10
