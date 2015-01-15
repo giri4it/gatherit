@@ -13,7 +13,7 @@
 	 "body-parser":"",
 	 "backbone-loading":"",
 	 "formidable":"",
-	 "util":""
+	 "util":"",
 	 "node-gcm-service":""
   },
   "engines": {
