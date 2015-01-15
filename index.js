@@ -68,6 +68,10 @@ app.post('/pushMessage', function(request, response) {
 
 });
 
+app.get('/getad', function(request, response) {
+	response.send('<html>This feature is getting developed.</html>');
+});
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
