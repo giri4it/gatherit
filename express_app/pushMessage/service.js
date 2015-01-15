@@ -48,7 +48,7 @@ module.exports = function() {
 						sender.sendMessage(message.toString(), keys, false,
 								function(err, data) {
 									if (!err) {
-										console.log("success =" + err);
+										console.log("success =" + data);
 									} else {
 										console.log("error =" + err);
 									}
