@@ -26,7 +26,7 @@ define(["jquery", "backbone","marionette","handlebars","text!home/template.hb", 
                 multi_selection: false,
                 max_file_size : '10mb',
                 filters : [
-                    {title : "Image files", extensions : "png,jpeg"}
+                    {title : "Image files", extensions : "png,jpeg,jpg"}
                 ],
                 resize : {width : 320, height : 240, quality : 90},
                 url:"/upload"
