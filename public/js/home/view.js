@@ -43,10 +43,15 @@ define(["jquery", "backbone","marionette","handlebars","text!home/template.hb", 
             return this;
         },
         events:{
-            'click #file-upload': 'startUpload'
+            'click #file-upload': 'startUpload',
+            'click #file-listing': 'startListing'
         },
         onBeforeDestroy: function () {
             
+        },
+        startListing: function(e){
+        	var globalChannel = Backbone.Wreqr.radio.channel('global');
+			globalChannel.vent.trigger("show:listing");
         },
         startUpload: function(e) {
             e.preventDefault();

@@ -55,7 +55,7 @@
 						<li>
 						<form class="navbar-form navbar-left">
 						<div class="navbar-header">
-						<button type="button" class="btn btn-default"> List Advertisements: </botton>
+						<button id="file-listing" type="button" class="btn btn-default"> List Advertisements: </botton>
 						</div>
 						</form>
 						</li>

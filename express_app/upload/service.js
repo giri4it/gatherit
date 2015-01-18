@@ -28,9 +28,9 @@ module.exports =
 				fs.readFile(loc_on_disk, 'hex', function(err, imgData) {
 					//console.log('imgData',imgData);
 					imgData = '\\x' + imgData;
-
+					var conString = "postgres://postgres:admin@localhost/postgres";
 					//move to dao later
-					pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+					pg.connect(conString, function(err, client, done) {
 						client.query('INSERT INTO advertisement_data(add_id, user_fk, file, file_type) VALUES ($1, $2, $3, $4)',[1,1,imgData,'image'], function(err, result) {
 							done();
 							if (err)
