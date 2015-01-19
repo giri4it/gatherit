@@ -10,7 +10,6 @@ module.exports =
 			var loginName = request.param('loginName');
 			var password = request.param('password');
 			//console.log("request received loginName - "+ loginName +"| password - "+ password );
-			
 			pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 			    client.query('SELECT * FROM user_login_info WHERE login_name=$1 AND password=$2',[loginName,password], function(err, result) {
 			      done();

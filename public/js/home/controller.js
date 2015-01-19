@@ -1,14 +1,23 @@
-define(["backbone","marionette", "home/view"],
-		function(Backbone, Marionette,  HomeView){
+define(["backbone","marionette", "home/view", "listing/controller"],
+		function(Backbone, Marionette,  HomeView, ListingController ){
 	
 	var homeView = new HomeView(),
 	 _options = {};
-	
+	var listingController = new ListingController();
     var HomeController = Backbone.Marionette.Controller.extend({
-    	showHome: function (_options){
-        	_options.region.show(homeView);
+    	showHome: function (options){
+    		_options = options;
+    		options.region.show(homeView);
+        	
+        	var globalChannel = Backbone.Wreqr.radio.channel('global');
+        	globalChannel.vent.on("show:listing",showListing);
         }
     });
+    
+    function showListing(){
+    	listingController.showListing(_options);
+    }
+    
     
     return HomeController;
 });
