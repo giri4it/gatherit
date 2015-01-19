@@ -14,8 +14,8 @@ var registerService = new RegisterService();
 var UploadService = require('./express_app/upload/service.js');
 var uploadService = new UploadService();
 
-var ListingService = require('./express_app/listing/service.js');
-var listingService = new ListingService();
+var ImageListService = require('./express_app/imagelist/service.js');
+var imageListService = new ImageListService();
 
 
 app.set('port', (process.env.PORT || 5000));
@@ -29,13 +29,13 @@ app.get('/', function(request, response) {
 
 app.post('/listing', function(request, response) {
 	
-	listingService.showListing(request,response);
+	imageListService.showListing(request,response);
 	  
 });
 
 app.get('/fetchImages', function(request, response) {
 	
-	listingService.fetchImages(request,response);
+	imageListService.fetchImages(request,response);
 	  
 });
 

@@ -1,4 +1,4 @@
-define(["backbone", "listing/model"],
+define(["backbone", "imagelist/itemModel"],
 		function(Backbone, ItemModel){	
     var ListingCollection = Backbone.Collection.extend({
     	url: '/fetchImages',

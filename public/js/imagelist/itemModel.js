@@ -1,12 +1,13 @@
 define(["backbone"],
-		function(Backbone){	
-    var ListingModel = Backbone.Model.extend({
+		function(Backbone){
+
+    var ItemModel = Backbone.Model.extend({
     	url:'/pushMessage',
     	defaults:{
-    	  add_id:"",
+    	  ad_id:"",
     	  user_fk:"",
     	  file_type:""
     	}
     });
-    return ListingModel;
+    return ItemModel;
 });

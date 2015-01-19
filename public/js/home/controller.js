@@ -1,9 +1,10 @@
-define(["backbone","marionette", "home/view", "listing/controller"],
+define(["backbone","marionette", "home/view", "imagelist/controller"],
 		function(Backbone, Marionette,  HomeView, ListingController ){
 	
 	var homeView = new HomeView(),
 	 _options = {};
 	var listingController = new ListingController();
+
     var HomeController = Backbone.Marionette.Controller.extend({
     	showHome: function (options){
     		_options = options;
