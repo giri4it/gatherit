@@ -41,7 +41,8 @@ module.exports = function() {
 
 						console.log("message =" + message);
 						var sender = new gcm.Sender({
-							key : 'AIzaSyDTAIUS59Je88zDAy-y2Aj-YnjsbaIgR2Y'
+							//key : 'AIzaSyDTAIUS59Je88zDAy-y2Aj-YnjsbaIgR2Y' -- key by Ashish
+							key : 'AIzaSyBLXqh86p9dbf7TMqXnHibYnrP_uF_4XTQ' // key from Sudhi
 						});
 						console.log("sender =" + sender);
 						sender.sendMessage(message.toString(), keys, false,
