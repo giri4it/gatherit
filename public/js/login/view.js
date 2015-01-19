@@ -2,7 +2,7 @@ define(["backbone","marionette","handlebars","text!login/template.hb","backbone.
 		function(Backbone, Marionette, Handlebars, Template, Stickit, LoginModel){
 	
     var LoginView = Backbone.Marionette.ItemView.extend({
-    	id:'container',
+    	id:'login-container',
     	tagName:'div',
     	model: new LoginModel(),
         initialize: function(){

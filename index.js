@@ -14,12 +14,29 @@ var registerService = new RegisterService();
 var UploadService = require('./express_app/upload/service.js');
 var uploadService = new UploadService();
 
+var ImageListService = require('./express_app/imagelist/service.js');
+var imageListService = new ImageListService();
+
+
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json())
 
 app.get('/', function(request, response) {
   response.send('Hello World!');
+});
+
+
+app.post('/listing', function(request, response) {
+	
+	imageListService.showListing(request,response);
+	  
+});
+
+app.get('/fetchImages', function(request, response) {
+	
+	imageListService.fetchImages(request,response);
+	  
 });
 
 app.post('/login', function(request, response) {
