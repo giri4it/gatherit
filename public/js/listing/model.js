@@ -4,6 +4,7 @@ define(["backbone"],
     	url:'/pushMessage',
     	defaults:{
     	  add_id:"",
+    	  user_fk:"",
     	  file_type:""
     	}
     });

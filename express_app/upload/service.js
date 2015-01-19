@@ -30,7 +30,7 @@ module.exports =
 					imgData = '\\x' + imgData;
 					//move to dao later
 					pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-						client.query('INSERT INTO advertisement_data(add_id, user_fk, file, file_type) VALUES ($1, $2, $3, $4)',[1,1,imgData,'image'], function(err, result) {
+						client.query('INSERT INTO advertisement_data(user_fk, file, file_type) VALUES ($1, $2, $3)',[1,imgData,'image'], function(err, result) {
 							done();
 							if (err)
 							{
