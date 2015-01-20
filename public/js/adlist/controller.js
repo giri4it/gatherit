@@ -1,4 +1,4 @@
-define(["backbone","marionette", "adlist/collectionView","adlist/collection"],
+define(["backbone","marionette", "adlist/compositeView","adlist/collection"],
 		function(Backbone, Marionette, CollectionView, CollectionModel){
 
 	var collection = new CollectionModel();

@@ -3,3 +3,13 @@
     background-size: 80px 60px;
     background-repeat: no-repeat;
 }
+
+.table-head {
+
+    background:#77cc6d;
+    border-color:#ccc #eee #eee #ccc;
+    border-style:solid;
+    border-width:1px;
+    padding:4px;
+    margin-bottom:10px;
+}
