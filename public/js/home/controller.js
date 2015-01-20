@@ -1,4 +1,4 @@
-define(["backbone","marionette", "home/view", "imagelist/controller"],
+define(["backbone","marionette", "home/view", "adlist/controller"],
 		function(Backbone, Marionette,  HomeView, ListingController ){
 	
 	var homeView = new HomeView(),

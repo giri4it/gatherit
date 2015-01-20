@@ -1,5 +1,5 @@
-define(["backbone","marionette","handlebars","text!imagelist/collectionTemplate.hb","backbone.stickit",
-         "imagelist/itemView"],
+define(["backbone","marionette","handlebars","text!adlist/collectionTemplate.hb","backbone.stickit",
+         "adlist/itemView"],
 
     function(Backbone, Marionette, Handlebars, CollectionTemplate, Stickit, ItemView){
 

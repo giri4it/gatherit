@@ -14,7 +14,7 @@ var registerService = new RegisterService();
 var UploadService = require('./express_app/upload/service.js');
 var uploadService = new UploadService();
 
-var ImageListService = require('./express_app/imagelist/service.js');
+var ImageListService = require('./express_app/adlist/service.js');
 var imageListService = new ImageListService();
 
 

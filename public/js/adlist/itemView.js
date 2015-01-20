@@ -1,4 +1,4 @@
-define(["backbone","marionette","handlebars","text!imagelist/itemTemplate.hb","backbone.stickit","imagelist/itemModel"],
+define(["backbone","marionette","handlebars","text!adlist/itemTemplate.hb","backbone.stickit","adlist/itemModel"],
 		function(Backbone, Marionette, Handlebars, ItemTemplate, Stickit, ListingModel){
 	
     var ItemView = Backbone.Marionette.ItemView.extend({
