@@ -79,18 +79,26 @@ module.exports =
 							fs.writeFile(imageSourcePath, readResult.rows[0].file, function (err) {
 								if(err){
 									console.error(err);
-									response.send("Error " + err);
+									response.end("Error " + err);
 								}
 								imageMagick(imageSourcePath).resize(100,50).write(imageThumbPath,
 								 function (err) {
 
-									if (err) throw err;
+									if (err) {
+										response.end("Error:"+ err);
+									}
 								 	console.log('resized image to fit within 300x200px');
 
 								});
 							});
 
+
+
 							fs.readFile(imageThumbPath, function (err, data) {
+								if(err) {
+									response.end("Error:"+ err);
+								}
+
 								if(data) {
 									response.write(data);
 								} else {
