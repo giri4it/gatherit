@@ -4,16 +4,19 @@
    <div class="col-md-2 column">
 
    </div>
-   <div class="col-md-2 column">
-    <h4>	Id </h4>
+   <div class="col-md-1 column">
+    <h5> Ad	Id </h5>
     </div>
-	<div class="col-md-2 column">
-    	<h4> File Type </h4>
+	<div class="col-md-1 column">
+    	<h5> Ad File Type </h5>
     </div>
     <div class="col-md-2 column">
-    	<h4> User Id </h4>
+        	<h5> Description </h5>
     </div>
-    <div class="col-md-4 column">
+    <div class="col-md-2 column">
+    	<h5> Ad thumbnail </h5>
+    </div>
+    <div class="col-md-5 column">
 
      </div>
 

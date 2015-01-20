@@ -14,7 +14,10 @@
 	 "backbone-loading":"",
 	 "formidable":"",
 	 "util":"",
-	 "node-gcm-service":""
+	 "node-gcm-service":"",
+	 "imagemagick":"",
+	 "gm":"",
+	 "fs":""
   },
   "engines": {
     "node": "0.10.x"

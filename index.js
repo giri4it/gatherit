@@ -14,8 +14,8 @@ var registerService = new RegisterService();
 var UploadService = require('./express_app/upload/service.js');
 var uploadService = new UploadService();
 
-var ImageListService = require('./express_app/adlist/service.js');
-var imageListService = new ImageListService();
+var AdlistService = require('./express_app/adlist/service.js');
+var adlistService = new AdlistService();
 
 
 app.set('port', (process.env.PORT || 5000));
@@ -27,17 +27,25 @@ app.get('/', function(request, response) {
 });
 
 
-app.post('/listing', function(request, response) {
-	
-	imageListService.showListing(request,response);
+app.get('/getadlist', function(request, response) {
+
+	adlistService.getAdList(request,response);
 	  
 });
 
-app.get('/fetchImages', function(request, response) {
-	
-	imageListService.fetchImages(request,response);
+app.get('/getimage', function(request, response) {
+
+	adlistService.getImage(request,response);
 	  
 });
+
+app.get('/getthumbimage', function(request, response) {
+
+	adlistService.getThumbImage(request,response);
+
+});
+
+
 
 app.post('/login', function(request, response) {
 	
@@ -86,7 +94,9 @@ app.post('/pushMessage', function(request, response) {
 });
 
 app.get('/getad', function(request, response) {
-	response.send('<html>This feature is getting developed.</html>');
+	
+	//response.writeHead(200, {'Content-Type': 'text/html' });
+	response.send('<html><body><h4 style="color: #ce8483">Exclusive offers!</h4></h4><img src="/getimage?ad_id=1&user_id=1"></body></html>');
 });
 
 app.listen(app.get('port'), function() {

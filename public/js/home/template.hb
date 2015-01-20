@@ -46,6 +46,8 @@
 					<form class="navbar-form navbar-left" method='post' action='upload' enctype="multipart/form-data">
 						<div class="form-group">
 							<input id="file-select" type="file" name="image" class="filestyle btn btn-primary" data-input="false" data-iconName="glyphicon-inbox">
+
+							</input>
 						</div>
 						<label for="filestyle-0" class="btn btn-default ">
 						<button id="file-upload" type="submit" class="glyphicon glyphicon-folder-open">  Submit  </button>
