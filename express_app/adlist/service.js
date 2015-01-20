@@ -76,6 +76,13 @@ module.exports =
 							console.log('err', err, 'pg readResult', readResult);
 						} else {
 							console.log(readResult);
+
+							if(!readResult.rows[0] || !readResult.rows[0].file){
+								console.log('error');
+								response.end('Error');
+								return;
+							}
+
 							fs.writeFile(imageSourcePath, readResult.rows[0].file, function (err) {
 								if(err){
 									console.error(err);
@@ -86,25 +93,23 @@ module.exports =
 
 									if (err) {
 										response.end("Error:"+ err);
+										return;
 									}
-								 	console.log('resized image to fit within 300x200px');
+								 	console.log('resized image to fit within 100x50px');
+									 fs.readFile(imageThumbPath, function (err, data) {
+										 if(err) {
+											 response.end("Error:"+ err);
+										 }
+
+										 if(data) {
+											 response.write(data);
+										 } else {
+											 response.write('image is not available');
+										 }
+										 response.end();
+									 });
 
 								});
-							});
-
-
-
-							fs.readFile(imageThumbPath, function (err, data) {
-								if(err) {
-									response.end("Error:"+ err);
-								}
-
-								if(data) {
-									response.write(data);
-								} else {
-									response.write('image is not available');
-								}
-								response.end();
 							});
 
 						}
