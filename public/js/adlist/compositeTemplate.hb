@@ -16,8 +16,8 @@
     <div class="col-md-2 column">
     	<h5> Ad thumbnail </h5>
     </div>
-    <div class="col-md-5 column">
-
+    <div class="col-md-4 column">
+        <button class="btn button default" value="Home" id="home"> Go Home </button>
      </div>
 
 </div>
