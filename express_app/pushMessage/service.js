@@ -11,8 +11,8 @@ module.exports = function() {
 		var userId = request.param('userId');
 		// console.log("request received loginName - "+ loginName +"| password -
 		// "+ password );
-		var conString = "postgres://postgres:admin@localhost/postgres";
-		pg.connect(conString, function(err, client, done) {
+		//var conString = "postgres://postgres:admin@localhost/postgres";
+		pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 			client.query('SELECT * FROM device_register_map ', [], function(
 					err, result) {
 				done();
