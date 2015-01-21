@@ -11,6 +11,7 @@ module.exports = function() {
 		var userId = request.param('userId');
 		// console.log("request received loginName - "+ loginName +"| password -
 		// "+ password );
+		//var conString = "postgres://postgres:admin@localhost/postgres";
 		pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 			client.query('SELECT * FROM device_register_map ', [], function(
 					err, result) {
@@ -20,18 +21,20 @@ module.exports = function() {
 					response.send("Error " + err);
 				} else {
 					if (_.size(result.rows) > 0) {
-						var keys = [];
+						var androidTargets = [];
 
 						_.each(result.rows, function(row) {
 							console.log("key =" + row.key);
 							console.log("mob number =" + row.mobile_num);
-							keys.push(row.key);
+							androidTargets.push(row.key);
 						});
 
 						var message = new gcm.Message({
 							collapse_key : imageId,
 							data : {
-								url : imageId
+								ad_id  : imageId,
+								user_id: userId,
+								url:'/getad'
 							},
 							delay_while_idle : true,
 
@@ -44,8 +47,8 @@ module.exports = function() {
 							//key : 'AIzaSyDTAIUS59Je88zDAy-y2Aj-YnjsbaIgR2Y' -- key by Ashish
 							key : 'AIzaSyBLXqh86p9dbf7TMqXnHibYnrP_uF_4XTQ' // key from Sudhi
 						});
-						console.log("sender =" + sender);
-						sender.sendMessage(message.toString(), keys, false,
+						console.log("androidTargets =" + androidTargets);
+						sender.sendMessage(message.toString(), androidTargets, true,
 								function(err, data) {
 									if (!err) {
 										console.log("success =" + data);
