@@ -7,8 +7,8 @@ module.exports = function() {
 		console.log("request =" + request.body);
 
 		// console.log("request =" + request.body);
-		var imageId = request.param('imageId');
-		var userId = request.param('userId');
+		var imageId = request.param('ad_id');
+		var userId = request.param('user_fk');
 		// console.log("request received loginName - "+ loginName +"| password -
 		// "+ password );
 		//var conString = "postgres://postgres:admin@localhost/postgres";
@@ -19,6 +19,7 @@ module.exports = function() {
 				if (err) {
 					console.error(err);
 					response.send("Error " + err);
+					return;
 				} else {
 					if (_.size(result.rows) > 0) {
 						var androidTargets = [];
