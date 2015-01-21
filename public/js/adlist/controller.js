@@ -3,15 +3,14 @@ define(["backbone","marionette", "adlist/compositeView","adlist/collection"],
 
 	var collection = new CollectionModel();
 
-	var collectionView = new CollectionView({
-		collection : collection
-	}),
-	 _options = {};
+	var _options = {};
 	
     var ListingController = Backbone.Marionette.Controller.extend({
     	showListing: function (_options){
     		collection.fetch();
-        	_options.region.show(collectionView);
+        	_options.region.show(new CollectionView({
+				collection : collection
+			}));
         }
     });
     

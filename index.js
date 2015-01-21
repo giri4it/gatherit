@@ -96,7 +96,9 @@ app.post('/pushMessage', function(request, response) {
 app.get('/getad', function(request, response) {
 	
 	//response.writeHead(200, {'Content-Type': 'text/html' });
-	response.send('<html><body><h4 style="color: #ce8483">Exclusive offers!</h4></h4><img src="/getimage?ad_id=1&user_id=1"></body></html>');
+	var ad_id = request.param('ad_id');
+	var user_id = request.param('user_id');
+	response.send('<html><body><h4 style="color: #ce8483">Exclusive offers!</h4><img src="/getimage?ad_id='+ad_id+'&user_id='+user_id+'"></body></html>');
 });
 
 app.listen(app.get('port'), function() {
