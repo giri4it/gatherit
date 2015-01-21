@@ -21,18 +21,20 @@ module.exports = function() {
 					response.send("Error " + err);
 				} else {
 					if (_.size(result.rows) > 0) {
-						var keys = [];
+						var androidTargets = [];
 
 						_.each(result.rows, function(row) {
 							console.log("key =" + row.key);
 							console.log("mob number =" + row.mobile_num);
-							keys.push(row.key);
+							androidTargets.push(row.key);
 						});
 
 						var message = new gcm.Message({
 							collapse_key : imageId,
 							data : {
-								url : imageId
+								ad_id  : imageId,
+								user_id: userId,
+								url:'/getad'
 							},
 							delay_while_idle : true,
 
@@ -44,8 +46,8 @@ module.exports = function() {
 						var sender = new gcm.Sender({
 							key : 'AIzaSyDTAIUS59Je88zDAy-y2Aj-YnjsbaIgR2Y'
 						});
-						console.log("sender =" + sender);
-						sender.sendMessage(message.toString(), keys, false,
+						console.log("androidTargets =" + androidTargets);
+						sender.sendMessage(message.toString(), androidTargets, true,
 								function(err, data) {
 									if (!err) {
 										console.log("success =" + data);
