@@ -8,16 +8,28 @@
   },
   "dependencies": {
     "express": "~4.9.x",
-	 "pg":"4.x",
-	 "underscore":"",
-	 "body-parser":"",
-	 "backbone-loading":"",
-	 "formidable":"",
-	 "util":"",
-	 "node-gcm-service":"",
-	 "imagemagick":"",
-	 "gm":"",
-	 "fs":""
+    "pg": "4.x",
+    "underscore": "",
+    "body-parser": "",
+    "backbone-loading": "",
+    "formidable": "",
+    "util": "",
+    "node-gcm-service": "",
+    "imagemagick": "",
+    "gm": "",
+    "fs": "",
+    "karma": "0.10.4",
+    "karma-coverage": "~0.1.0",
+    "karma-script-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-coffee-preprocessor": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-junit-reporter": "~0.2.2",
+    "karma-requirejs": "~0.1.0",
+    "karma-jasmine": "~0.1.0",
+		"karma-phantomjs-launcher": "~0.1"
   },
   "engines": {
     "node": "0.10.x"
@@ -31,5 +43,8 @@
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "karma-chrome-launcher": "^0.1.7"
+  }
 }

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gatherit.iml" filepath="$PROJECT_DIR$/gatherit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../android/gatherit-mob/gatherit-mob.iml" filepath="$PROJECT_DIR$/../../android/gatherit-mob/gatherit-mob.iml" />
     </modules>
   </component>
 </project>

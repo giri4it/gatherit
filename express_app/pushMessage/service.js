@@ -3,17 +3,17 @@ module.exports = function() {
 	var pg = require('pg');
 	var _ = require('underscore');
 	var gcm = require('node-gcm-service');
+
 	this.push = function(request, response) {
 		console.log("request =" + request.body);
 
 		// console.log("request =" + request.body);
 		var imageId = request.param('ad_id');
 		var userId = request.param('user_fk');
-		// console.log("request received loginName - "+ loginName +"| password -
-		// "+ password );
+		console.log("request received ad_id - "+ imageId +"| user id -"+ userId );
 		//var conString = "postgres://postgres:admin@localhost/postgres";
 		pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-			client.query('SELECT * FROM device_register_map ', [], function(
+			client.query('SELECT * FROM device_register_map', [], function(
 					err, result) {
 				done();
 				if (err) {
@@ -43,12 +43,14 @@ module.exports = function() {
 							dry_run : false
 						});
 
-						console.log("message =" + message);
+						console.log("message =" + message.toString());
 						var sender = new gcm.Sender({
 							//key : 'AIzaSyDTAIUS59Je88zDAy-y2Aj-YnjsbaIgR2Y' -- key by Ashish
-							key : 'AIzaSyBLXqh86p9dbf7TMqXnHibYnrP_uF_4XTQ' // key from Sudhi
+							apiKey : 'AIzaSyBLXqh86p9dbf7TMqXnHibYnrP_uF_4XTQ' // key from Sudhi
 						});
 						console.log("androidTargets =" + androidTargets);
+						//sender.setGCMEndpoint('https://android.googleapis.com');
+						//sender.setGCMEndPath('/gcm/send');
 						sender.sendMessage(message.toString(), androidTargets, true,
 								function(err, data) {
 									if (!err) {
