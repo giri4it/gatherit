@@ -51,15 +51,29 @@ module.exports = function() {
 						console.log("androidTargets =" + androidTargets);
 						//sender.setGCMEndpoint('https://android.googleapis.com');
 						//sender.setGCMEndPath('/gcm/send');
-						sender.sendMessage(message.toString(), androidTargets, true,
-								function(err, data) {
-									if (!err) {
-										console.log("success =" + data);
-									} else {
-										console.log("error =" + err);
-									}
-								});
-						response.json("{Authentication: SUCCESS}");
+						var success=false;
+						for(var i=0;i<androidTargets.length;i++){
+							console.info("device: ",androidTargets[i]);
+
+							sender.sendMessage(message.toString(), androidTargets[i], true, function(err, data) {
+					            if (!err) {
+					                // do something
+					               console.info("data",JSON.stringify(data));
+					               success=true;
+					            } else {
+					                // handle error
+					               console.info("error",JSON.stringify(err));
+					               success=false;
+					            }
+					        });
+
+					}
+						if(success){
+						response.json("{GCM push : SUCCESS}");
+						}
+						else{
+							response.json("{GCM push  :FAILED}");
+						}
 					} else {
 						response.status(401);
 						response.json("{Authentication :FAILED}");
