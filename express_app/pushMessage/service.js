@@ -39,7 +39,7 @@ module.exports = function() {
 							},
 							delay_while_idle : true,
 
-							time_to_live : 34,
+							time_to_live : 86400,
 							dry_run : false
 						});
 
